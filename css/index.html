@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Synthetic Syndicate</title>
+  <meta name="description" content="Expert sports picks, consensus feeds, and parlay cards." />
+  <meta name="theme-color" content="#060b14" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Syndicate" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png" />
+  <meta property="og:title"       content="Synthetic Syndicate" />
+  <meta property="og:description" content="Expert sports picks and consensus feeds." />
+  <meta property="og:image"       content="icons/og-image.png" />
+  <meta property="og:type"        content="website" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="css/voice-styles.css" />
+  <style>
+    @media (max-width: 768px) {
+      .main { flex-direction: column !important; }
+      .sidebar { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+      .left-col { width: 100% !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">SYNTHETIC <span>SYNDICATE</span></div>
+    <nav class="header-nav">
+      <button class="nav-btn nav-hide-sm">Live Data</button>
+      <button class="nav-btn nav-hide-sm">Leaderboard</button>
+      <button class="nav-btn">My Picks</button>
+      <button class="nav-btn primary">Join Free</button>
+    </nav>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">CONSENSUS</div>
+  <div style="overflow:hidden;flex:1;display:flex;align-items:center;">
+    <div class="ticker-track">
+      <div class="ticker-item"><span class="sep">NFL</span><span class="pick">Raiders +3.5</span>— 4 of 5 experts</div>
+      <div class="ticker-item"><span class="sep">NBA</span><span class="pick">Lakers ML</span>— 3 of 5 experts</div>
+      <div class="ticker-item"><span class="sep">NHL</span><span class="pick">Carolina -1.5</span>— 4 of 5 experts · 7-2 over Chicago</div>
+      <div class="ticker-item"><span class="sep">NFL</span><span class="pick">Chiefs -6.5</span>— 2 of 5 experts</div>
+      <div class="ticker-item"><span class="sep">MLB</span><span class="pick">Yankees O8.5</span>— 2 of 5 experts</div>
+      <div class="ticker-item"><span class="sep">NFL</span><span class="pick">Raiders +3.5</span>— 4 of 5 experts</div>
+      <div class="ticker-item"><span class="sep">NBA</span><span class="pick">Lakers ML</span>— 3 of 5 experts</div>
+      <div class="ticker-item"><span class="sep">NHL</span><span class="pick">Carolina -1.5</span>— 4 of 5 experts · 7-2 over Chicago</div>
+      <div class="ticker-item"><span class="sep">NFL</span><span class="pick">Chiefs -6.5</span>— 2 of 5 experts</div>
+      <div class="ticker-item"><span class="sep">MLB</span><span class="pick">Yankees O8.5</span>— 2 of 5 experts</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="left-col">
+    <div class="section-title">AI Influencer Picks</div>
+
+    <div class="filter-tabs">
+      <button class="tab active" onclick="filterTab(this,'all')">All Sports</button>
+      <button class="tab" onclick="filterTab(this,'nfl')">NFL</button>
+      <button class="tab" onclick="filterTab(this,'nba')">NBA</button>
+      <button class="tab" onclick="filterTab(this,'nhl')">NHL</button>
+      <button class="tab" onclick="filterTab(this,'mlb')">MLB</button>
+    </div>
+
+    <div class="expert-cards">
+
+      <!-- ══════════════════════════════════════════
+           CARD 1 — "IRON" MIKE K.
+           SWAP src HERE → src="images/iron-mike.jpg"
+           Then delete the <div class="ph"> block.
+           ══════════════════════════════════════════ -->
+      <div class="expert-card" data-sport="nfl" data-character="iron-mike"
+           onclick="openParlay('&quot;Iron&quot; Mike K.','NFL Analyst','Raiders +3.5,-115','Chiefs ML,+105','Cowboys -3,-108','73%','22-8')">
+        <div class="card-image-wrap">
+          <img src="nfl.jpg" alt="Iron Mike portrait"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="ph" style="display:flex;">
+            <div class="ph-ring">👤</div>
+            <div class="ph-text">→ Insert driver portrait here ←</div>
+          </div>
+          <div class="img-badge hot">HOT</div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="avatar av-green">MK</div>
+            <div class="card-info">
+              <div class="card-name">"Iron" Mike K.</div>
+              <div class="card-role">NFL Analyst · 12 years experience</div>
+            </div>
+          </div>
+          <div class="card-stats">
+            <div class="stat"><div class="stat-val green">73%</div><div class="stat-label">30-Day Win%</div></div>
+            <div class="stat"><div class="stat-val">22-8</div><div class="stat-label">30-Day Record</div></div>
+            <div class="stat"><div class="stat-val green">+18.4u</div><div class="stat-label">Units Won</div></div>
+          </div>
+          <div class="card-bottom">
+            <div class="current-pick">Current pick: <strong>Raiders +3.5</strong></div>
+            <button class="parlay-btn" onclick="event.stopPropagation();openParlay('&quot;Iron&quot; Mike K.','NFL Analyst','Raiders +3.5,-115','Chiefs ML,+105','Cowboys -3,-108','73%','22-8')">
+              🎙 See Parlay
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           CARD 2 — "SWOOSH" D. JAMES
+           SWAP src HERE → src="images/swoosh.jpg"
+           ══════════════════════════════════════════ -->
+      <div class="expert-card" data-sport="nba" data-character="swoosh"
+           onclick="openParlay('&quot;Swoosh&quot; D. James','NBA Specialist','Lakers ML,-120','Nets +4.5,-110','Bucks -2,-115','50%','15-15')">
+        <div class="card-image-wrap">
+          <img src="nba.jpg" alt="Swoosh portrait"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="ph" style="display:flex;">
+            <div class="ph-ring">👤</div>
+            <div class="ph-text">→ Insert driver portrait here ←</div>
+          </div>
+          <div class="img-badge cool">COOLDOWN</div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="avatar av-blue">DJ</div>
+            <div class="card-info">
+              <div class="card-name">"Swoosh" D. James</div>
+              <div class="card-role">NBA Specialist · 8 years experience</div>
+            </div>
+          </div>
+          <div class="card-stats">
+            <div class="stat"><div class="stat-val">50%</div><div class="stat-label">30-Day Win%</div></div>
+            <div class="stat"><div class="stat-val">15-15</div><div class="stat-label">30-Day Record</div></div>
+            <div class="stat"><div class="stat-val red">-2.1u</div><div class="stat-label">Units</div></div>
+          </div>
+          <div class="card-bottom">
+            <div class="current-pick cooldown">Status: <strong>No active picks</strong></div>
+            <button class="parlay-btn" onclick="event.stopPropagation();openParlay('&quot;Swoosh&quot; D. James','NBA Specialist','Lakers ML,-120','Nets +4.5,-110','Bucks -2,-115','50%','15-15')">
+              🎙 View History
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           CARD 3 — SARA R. (SYNDICATE LEADER)
+           SWAP src HERE → src="images/sara.jpg"
+           ══════════════════════════════════════════ -->
+      <div class="expert-card leader" data-sport="nhl" data-character="sarah"
+           onclick="openParlay('Sara R.','Multi-Sport Lead','Oilers -110,-110','Flames +1.5,-120','Maple Leafs ML,-130','83%','25-5')">
+        <div class="card-image-wrap">
+          <img src="stats.jpg" alt="Sara R. portrait"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="ph" style="display:flex;">
+            <div class="ph-ring">👤</div>
+            <div class="ph-text">→ Insert driver portrait here ←</div>
+          </div>
+          <div class="img-badge leader">SYNDICATE LEADER</div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="avatar av-amber">SR</div>
+            <div class="card-info">
+              <div class="card-name">Sara R.</div>
+              <div class="card-role">Multi-Sport Lead · 15 years experience</div>
+            </div>
+          </div>
+          <div class="card-stats">
+            <div class="stat"><div class="stat-val green">83%</div><div class="stat-label">30-Day Win%</div></div>
+            <div class="stat"><div class="stat-val">25-5</div><div class="stat-label">30-Day Record</div></div>
+            <div class="stat"><div class="stat-val green">+31.2u</div><div class="stat-label">Units Won</div></div>
+          </div>
+          <div class="card-bottom">
+            <div class="current-pick">Current pick: <strong>Oilers -110</strong></div>
+            <button class="parlay-btn amber" onclick="event.stopPropagation();openParlay('Sara R.','Multi-Sport Lead','Oilers -110,-110','Flames +1.5,-120','Maple Leafs ML,-130','83%','25-5')">
+              🎙 See Parlay
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           CARD 4 — TOMMY "THE CHART" C.
+           SWAP src HERE → src="images/tommy.jpg"
+           ══════════════════════════════════════════ -->
+      <div class="expert-card" data-sport="mlb"
+           onclick="openParlay('Tommy &quot;The Chart&quot; C.','MLB & Totals','Yankees O8.5,-115','Dodgers ML,-125','Astros -1.5,+105','68%','17-8')">
+        <div class="card-image-wrap">
+          <img src="" alt="Tommy portrait"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="ph" style="display:flex;">
+            <div class="ph-ring">👤</div>
+            <div class="ph-text">→ Insert driver portrait here ←</div>
+          </div>
+          <div class="img-badge hot">HOT</div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="avatar av-green">TC</div>
+            <div class="card-info">
+              <div class="card-name">Tommy "The Chart" C.</div>
+              <div class="card-role">MLB & Totals Specialist · 10 years</div>
+            </div>
+          </div>
+          <div class="card-stats">
+            <div class="stat"><div class="stat-val green">68%</div><div class="stat-label">30-Day Win%</div></div>
+            <div class="stat"><div class="stat-val">17-8</div><div class="stat-label">30-Day Record</div></div>
+            <div class="stat"><div class="stat-val green">+11.7u</div><div class="stat-label">Units Won</div></div>
+          </div>
+          <div class="card-bottom">
+            <div class="current-pick">Current pick: <strong>Yankees O8.5</strong></div>
+            <button class="parlay-btn" onclick="event.stopPropagation();openParlay('Tommy &quot;The Chart&quot; C.','MLB & Totals','Yankees O8.5,-115','Dodgers ML,-125','Astros -1.5,+105','68%','17-8')">
+              🎙 See Parlay
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="cta-card">
+      <div class="cta-title">Unlock Full Parlays</div>
+      <div class="cta-sub">Join free to see every expert's full card, reasoning, and unit sizing.</div>
+      <button class="cta-btn">Join Free — No Card Needed</button>
+    </div>
+
+    <div class="sidebar-card banter-card">
+      <div class="sidebar-title">Driver Banter</div>
+      <div class="cta-sub">Trigger local commentary from Iron Mike, Swoosh, or Sarah using the live consensus data.</div>
+      <div class="banter-actions">
+        <div class="banter-cta-row">
+          <button class="cta-btn" id="unlock-banter-btn" type="button">🎙 Start Auto Banter</button>
+          <button class="cta-btn glow-test-btn" id="run-test-btn" type="button">▶ Run Test</button>
+        </div>
+        <div class="mini-banter-grid">
+          <button class="parlay-btn" id="banter-btn-nfl" type="button">Iron Mike</button>
+          <button class="parlay-btn" id="banter-btn-nba" type="button">Swoosh</button>
+          <button class="parlay-btn amber" id="banter-btn-stats" type="button">Sarah</button>
+        </div>
+        <div class="banter-output" id="banter-output">Tap a character or run a test to hear the take. The market link stays idle until you click it.</div>
+        <div class="banter-cta-row">
+          <a id="betPopupLink" class="cta-btn glow-link-btn" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">🌐 View the Market</a>
+        </div>
+        <div class="banter-hint">Auto-popups are off. The link above opens Google in a fresh tab only when you click it.</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Tonight's Consensus</div>
+      <div class="con-item" id="consensus-item-1">
+        <div class="con-row"><div class="con-pick">Raiders +3.5</div><div class="con-pct" id="raiders-pct">80%</div></div>
+        <div class="con-bar-track"><div class="con-bar-fill" id="raiders-bar" style="width:80%"></div></div>
+        <div class="con-sport">NFL · 4 of 5 experts</div>
+      </div>
+      <div class="con-item" id="consensus-item-2">
+        <div class="con-row"><div class="con-pick">Carolina -1.5</div><div class="con-pct" id="carolina-pct">88%</div></div>
+        <div class="con-bar-track"><div class="con-bar-fill" id="carolina-bar" style="width:88%"></div></div>
+        <div class="con-sport">NHL · Carolina crushed Chicago 7-2 · Metro leaders</div>
+      </div>
+      <div class="con-item" id="consensus-item-3">
+        <div class="con-row"><div class="con-pick">Lakers ML</div><div class="con-pct" id="lakers-pct">60%</div></div>
+        <div class="con-bar-track"><div class="con-bar-fill" id="lakers-bar" style="width:60%"></div></div>
+        <div class="con-sport">NBA · 3 of 5 experts</div>
+      </div>
+      <div class="con-item" id="consensus-item-4">
+        <div class="con-row"><div class="con-pick">Yankees O8.5</div><div class="con-pct" id="yankees-pct">40%</div></div>
+        <div class="con-bar-track"><div class="con-bar-fill" id="yankees-bar" style="width:40%"></div></div>
+        <div class="con-sport">MLB · 2 of 5 experts</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">Expert Leaderboard · April</div>
+      <div class="lb-row"><div class="lb-rank gold">1</div><div class="lb-name">Sara R.</div><div class="lb-record">83% · +31.2u</div></div>
+      <div class="lb-row"><div class="lb-rank">2</div><div class="lb-name">"Iron" Mike K.</div><div class="lb-record">73% · +18.4u</div></div>
+      <div class="lb-row"><div class="lb-rank">3</div><div class="lb-name">Tommy "The Chart" C.</div><div class="lb-record">68% · +11.7u</div></div>
+      <div class="lb-row"><div class="lb-rank">4</div><div class="lb-name">"Swoosh" D. James</div><div class="lb-record">50% · -2.1u</div></div>
+    </div>
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SYNTHETIC <span>SYNDICATE</span></div>
+    <div class="footer-disclaimer">
+      For entertainment purposes only. Gambling involves risk. Please gamble responsibly.
+      If you or someone you know has a gambling problem, call 1-800-GAMBLER.
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     PARLAY MODAL — slides up on card tap
+     AI voice hookup: replace the speakParlay()
+     body with your ElevenLabs / Web Speech call
+     ══════════════════════════════════════════ -->
+<div class="modal-overlay" id="parlayModal" onclick="closeParlay(event)">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-expert" id="modalName">Expert Name</div>
+    <div class="modal-subtitle" id="modalRole">Role · 30-Day Record</div>
+    <div class="modal-parlay-legs" id="modalLegs"></div>
+    <div class="modal-payout">
+      <div>
+        <div class="payout-label">3-Leg Parlay Payout</div>
+        <div style="font-size:11px;color:var(--text-muted);">$100 bet</div>
+      </div>
+      <div class="payout-val" id="modalPayout">+$612</div>
+    </div>
+    <!-- AI VOICE BUTTON — wire your TTS here -->
+    <button class="voice-btn" onclick="speakParlay()">
+      🎙 Hear My Parlay Card
+    </button>
+    <button class="modal-close" onclick="document.getElementById('parlayModal').classList.remove('open')">
+      Close
+    </button>
+  </div>
+</div>
+
+<script src="js/banter.js"></script>
+<script>
+  /* ── Sport filter ── */
+  function filterTab(el, sport) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.expert-card').forEach(card => {
+      card.style.display = (sport === 'all' || card.dataset.sport === sport) ? '' : 'none';
+    });
+  }
+
+  /* ── Parlay modal ──
+     leg format: "Pick Name,Odds"  e.g. "Raiders +3.5,-115"  */
+  let currentSpeechText = '';
+
+  function openParlay(name, role, leg1, leg2, leg3, winPct, record) {
+    document.getElementById('modalName').innerHTML = name;
+    document.getElementById('modalRole').textContent = role + ' · 30-Day: ' + record + ' (' + winPct + ')';
+
+    const legs = [leg1, leg2, leg3];
+    const legsHtml = legs.map(l => {
+      const [pick, odds] = l.split(',');
+      return `<div class="parlay-leg">
+        <div class="leg-pick">${pick.trim()}</div>
+        <div class="leg-odds">${odds.trim()}</div>
+      </div>`;
+    }).join('');
+    document.getElementById('modalLegs').innerHTML = legsHtml;
+
+    // Simple parlay payout estimate
+    const oddsToDecimal = o => {
+      const n = parseInt(o);
+      return n > 0 ? (n / 100) + 1 : (100 / Math.abs(n)) + 1;
+    };
+    const payout = legs.reduce((acc, l) => acc * oddsToDecimal(l.split(',')[1]), 1);
+    document.getElementById('modalPayout').textContent = '+$' + Math.round((payout - 1) * 100);
+
+    // Build speech text for AI voice
+    currentSpeechText = `${name.replace(/"/g, '')} parlay card. ${legs.map(l => l.split(',')[0].trim()).join(', ')}. 30 day record: ${record} at ${winPct} win rate. Let's get it.`;
+
+    document.getElementById('parlayModal').classList.add('open');
+  }
+
+  function closeParlay(e) {
+    if (e.target === document.getElementById('parlayModal')) {
+      document.getElementById('parlayModal').classList.remove('open');
+    }
+  }
+
+  /* ── AI VOICE HOOKUP ──────────────────────────
+     Replace this function body with your TTS call.
+     Options:
+       A) Web Speech API (free, built-in):
+          const u = new SpeechSynthesisUtterance(currentSpeechText);
+          speechSynthesis.speak(u);
+       B) ElevenLabs API:
+          fetch your ElevenLabs endpoint with currentSpeechText
+       C) Any other TTS provider
+     ──────────────────────────────────────────── */
+  function pickPreferredSpeechVoice() {
+    const voices = window.speechSynthesis?.getVoices?.() || [];
+    if (!voices.length) {
+      return null;
+    }
+
+    const priorityNames = ['Google US English', 'Microsoft David', 'Microsoft David Desktop - English (United States)', 'Google UK English Male', 'Microsoft Guy'];
+    const preferredVoice = priorityNames
+      .map((name) => voices.find((voice) => voice.name === name || voice.name.includes(name)))
+      .find(Boolean);
+
+    if (preferredVoice) {
+      return preferredVoice;
+    }
+
+    const maleHints = ['david', 'guy', 'google us english', 'english male', 'mark', 'daniel'];
+    return voices.find((voice) => maleHints.some((hint) => voice.name.toLowerCase().includes(hint))) || voices[0];
+  }
+
+  function speakParlay() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.getVoices();
+      const u = new SpeechSynthesisUtterance(currentSpeechText);
+      const preferredVoice = pickPreferredSpeechVoice();
+
+      if (preferredVoice) {
+        u.voice = preferredVoice;
+      }
+
+      u.lang = 'en-US';
+      u.rate = 0.85;
+      u.pitch = 0.65;
+      u.volume = 1;
+      window.speechSynthesis.speak(u);
+    } else {
+      alert('Voice coming soon! Text: ' + currentSpeechText);
+    }
+  }
+
+  /* ── PWA Service Worker ── */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+</script>
+
+</body>
+</html>

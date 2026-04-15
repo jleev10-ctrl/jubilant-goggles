@@ -1,0 +1,182 @@
+{
+  "sport": "MLB",
+  "scraped_at": "2025-04-09T14:30:00Z",
+  "game_count": 5,
+  "games": [
+    {
+      "away": "New York Yankees",
+      "home": "Boston Red Sox",
+      "spread_consensus": {
+        "away_pct": 72,
+        "home_pct": 28
+      },
+      "total_consensus": {
+        "over_pct": 68,
+        "under_pct": 32
+      },
+      "ml_consensus": {
+        "away_pct": 75,
+        "home_pct": 25
+      },
+      "spread": {
+        "open": "-1.5",
+        "current": "-2.0",
+        "movement": "down"
+      },
+      "total": {
+        "open": "8.5",
+        "current": "8.0",
+        "movement": "down"
+      },
+      "moneyline": {
+        "away_open": "-130",
+        "away_current": "-145",
+        "home_open": "+110",
+        "home_current": "+125"
+      },
+      "voice_script": "MLB matchup: New York Yankees at Boston Red Sox. The public is 72% on the Yankees against the spread. 68% of bettors like the over. But the spread has moved down from -1.5 to -2.0. Watch for sharp money on the other side.",
+      "sport": "MLB",
+      "scraped_at": "2025-04-09T14:30:00Z"
+    },
+    {
+      "away": "Los Angeles Dodgers",
+      "home": "San Diego Padres",
+      "spread_consensus": {
+        "away_pct": 65,
+        "home_pct": 35
+      },
+      "total_consensus": {
+        "over_pct": 55,
+        "under_pct": 45
+      },
+      "ml_consensus": {
+        "away_pct": 68,
+        "home_pct": 32
+      },
+      "spread": {
+        "open": "-1.0",
+        "current": "-1.5",
+        "movement": "down"
+      },
+      "total": {
+        "open": "7.5",
+        "current": "7.5",
+        "movement": "flat"
+      },
+      "moneyline": {
+        "away_open": "-115",
+        "away_current": "-125",
+        "home_open": "-105",
+        "home_current": "+110"
+      },
+      "voice_script": "MLB matchup: Los Angeles Dodgers at San Diego Padres. The public is 65% on the Dodgers against the spread. 55% of bettors like the over. The spread has moved from -1.0 to -1.5. Watch for sharp money on the other side.",
+      "sport": "MLB",
+      "scraped_at": "2025-04-09T14:30:00Z"
+    },
+    {
+      "away": "Houston Astros",
+      "home": "Texas Rangers",
+      "spread_consensus": {
+        "away_pct": 58,
+        "home_pct": 42
+      },
+      "total_consensus": {
+        "over_pct": 72,
+        "under_pct": 28
+      },
+      "ml_consensus": {
+        "away_pct": 60,
+        "home_pct": 40
+      },
+      "spread": {
+        "open": "-0.5",
+        "current": "+0.5",
+        "movement": "up"
+      },
+      "total": {
+        "open": "8.0",
+        "current": "8.5",
+        "movement": "up"
+      },
+      "moneyline": {
+        "away_open": "-105",
+        "away_current": "-110",
+        "home_open": "-115",
+        "home_current": "-120"
+      },
+      "voice_script": "MLB matchup: Houston Astros at Texas Rangers. The public is 58% on the Astros against the spread. 72% of bettors like the over. The spread has moved up from -0.5 to +0.5. Watch for sharp money on the other side.",
+      "sport": "MLB",
+      "scraped_at": "2025-04-09T14:30:00Z"
+    },
+    {
+      "away": "Toronto Blue Jays",
+      "home": "Tampa Bay Rays",
+      "spread_consensus": {
+        "away_pct": 62,
+        "home_pct": 38
+      },
+      "total_consensus": {
+        "over_pct": 51,
+        "under_pct": 49
+      },
+      "ml_consensus": {
+        "away_pct": 64,
+        "home_pct": 36
+      },
+      "spread": {
+        "open": "-1.0",
+        "current": "-1.0",
+        "movement": "flat"
+      },
+      "total": {
+        "open": "7.0",
+        "current": "7.0",
+        "movement": "flat"
+      },
+      "moneyline": {
+        "away_open": "-120",
+        "away_current": "-120",
+        "home_open": "+100",
+        "home_current": "+100"
+      },
+      "voice_script": "MLB matchup: Toronto Blue Jays at Tampa Bay Rays. The public is 62% on the Blue Jays against the spread. 51% of bettors like the over. Line remains stable at -1.0.",
+      "sport": "MLB",
+      "scraped_at": "2025-04-09T14:30:00Z"
+    },
+    {
+      "away": "Kansas City Royals",
+      "home": "Chicago White Sox",
+      "spread_consensus": {
+        "away_pct": 70,
+        "home_pct": 30
+      },
+      "total_consensus": {
+        "over_pct": 64,
+        "under_pct": 36
+      },
+      "ml_consensus": {
+        "away_pct": 72,
+        "home_pct": 28
+      },
+      "spread": {
+        "open": "-2.0",
+        "current": "-1.5",
+        "movement": "up"
+      },
+      "total": {
+        "open": "7.5",
+        "current": "8.0",
+        "movement": "up"
+      },
+      "moneyline": {
+        "away_open": "-140",
+        "away_current": "-130",
+        "home_open": "+120",
+        "home_current": "+110"
+      },
+      "voice_script": "MLB matchup: Kansas City Royals at Chicago White Sox. The public is 70% on the Royals against the spread. 64% of bettors like the over. The spread has moved up from -2.0 to -1.5. Watch for sharp money on the other side.",
+      "sport": "MLB",
+      "scraped_at": "2025-04-09T14:30:00Z"
+    }
+  ]
+}
