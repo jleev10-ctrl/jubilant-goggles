@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Sports Telemetry — dark by default */
+    --background: 220 30% 6%;
+    --foreground: 190 30% 95%;
+
+    --card: 220 28% 9%;
+    --card-foreground: 190 30% 95%;
+
+    --popover: 220 30% 8%;
+    --popover-foreground: 190 30% 95%;
+
+    --primary: 175 95% 50%;
+    --primary-foreground: 220 40% 6%;
+
+    --secondary: 220 25% 14%;
+    --secondary-foreground: 190 30% 95%;
+
+    --muted: 220 22% 14%;
+    --muted-foreground: 215 18% 65%;
+
+    --accent: 142 75% 48%;
+    --accent-foreground: 220 40% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 60% 22%;
+    --input: 220 22% 16%;
+    --ring: 175 95% 50%;
+
+    /* Telemetry tokens */
+    --hot: 0 90% 58%;
+    --win: 142 76% 50%;
+    --hud: 195 100% 55%;
+    --hud-glow: 195 100% 50%;
+    --steel-1: 220 25% 16%;
+    --steel-2: 220 30% 9%;
+
+    --gradient-hud: linear-gradient(180deg, hsl(220 30% 12%), hsl(220 35% 6%));
+    --gradient-cta: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-steel: linear-gradient(180deg, hsl(var(--steel-1)), hsl(var(--steel-2)));
+    --shadow-hud: 0 0 0 1px hsl(var(--hud) / 0.35), 0 0 24px hsl(var(--hud) / 0.25), inset 0 1px 0 hsl(var(--hud) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.35);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image:
+      radial-gradient(ellipse at top, hsl(var(--hud) / 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom, hsl(var(--primary) / 0.06), transparent 60%);
+  }
+}
+
+@layer components {
+  .hud-panel {
+    background: var(--gradient-hud);
+    box-shadow: var(--shadow-hud);
+    border-radius: calc(var(--radius) + 4px);
+  }
+  .hud-chip {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono uppercase tracking-wider;
+    background: hsl(var(--steel-1));
+    border: 1px solid hsl(var(--hud) / 0.4);
+    color: hsl(var(--hud));
+  }
+  .ticker {
+    animation: ticker-scroll 40s linear infinite;
+  }
+  .pulse-dot {
+    animation: pulse-dot 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 hsl(var(--win) / 0.6); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 8px hsl(var(--win) / 0); }
+}
